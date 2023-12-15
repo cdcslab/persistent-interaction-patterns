@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  r_analysis:
+    container_name: rstudio-server
+    image: 
+      rdocker:4.3
+    build:
+      context: .
+    environment:
+      - RENV_PATHS_CACHE=/home/rstudio/.cache/R/renv # required from renv
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8787:8787"
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
