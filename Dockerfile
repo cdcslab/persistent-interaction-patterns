@@ -1,30 +1,24 @@
-# Usa un'immagine di base con Python e R preinstallati
+
 FROM rocker/rstudio:4.3
 
-# Imposta la directory di lavoro
 WORKDIR /app
 
-# Installo libq-dev per RPostgreSQL
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     cmake \
     libz-dev \ 
     libpng-dev
 
-# Installa pacchetti R necessari
 RUN Rscript -e "install.packages('remotes', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN Rscript -e "remotes::install_github('rstudio/renv')"
 
-# Copy the lockfile over to the Docker image
 COPY renv.lock renv.lock
 
-# Install all R packages specified in renv.lock
 RUN Rscript -e 'renv::restore()'
 
 RUN mkdir -p /home/rstudio/.cache/
 RUN sudo chown -R rstudio /home/rstudio/.cache/
 
-# Copia i file del tuo progetto
 COPY . /app
 
 # Run scripts
