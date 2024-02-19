@@ -35,7 +35,6 @@ for (social_name in social_to_work_with) {
       )
     ) %>%
       setDT()
-    
   }
   
   # Unify column names
@@ -68,7 +67,6 @@ all_data$social <- factor(
     "Voat"
   )
 )
-
 
 if (identical(social_to_work_with, social_unique_names)) {
   # In this case save directly the file

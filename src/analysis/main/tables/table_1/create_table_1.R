@@ -10,7 +10,6 @@ library(arrow)
 library(datetime)
 library(stringr)
 library(xtable)
-source("./src/utils/database_utils.R")
 
 
 # Functions ####
