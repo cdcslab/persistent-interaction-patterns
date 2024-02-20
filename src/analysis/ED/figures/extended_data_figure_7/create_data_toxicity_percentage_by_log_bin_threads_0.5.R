@@ -16,7 +16,7 @@ source("src/utils/participation_and_regression_functions.R")
 
 all_data <- setDT(NULL)
 # social <- c("gab", "reddit", "voat", "telegram", "twitter", "usenet", "youtube", "facebook")
-social = "gab"
+social = c("voat")
 
 for (i in social) {
   # Read all the comments
@@ -123,14 +123,7 @@ all_data[social == "Youtube", "social"] <- "YouTube"
 if (identical(
   social,
   c(
-    "gab",
-    "reddit",
-    "voat",
-    "telegram",
-    "twitter",
-    "usenet",
-    "youtube",
-    "facebook"
+    "voat"
   )
 )) {
   # In this case save directly the file

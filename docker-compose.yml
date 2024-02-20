@@ -9,9 +9,6 @@ services:
     environment:
       - RENV_PATHS_CACHE=/home/rstudio/.cache/R/renv # required from renv
     working_dir: /app
-    volumes:
-      - ${PWD}/data:/app/data
-      - ${PWD}/figures:/app/figures
     ports:
       - "8787:8787"
     stdin_open: true # docker run -i

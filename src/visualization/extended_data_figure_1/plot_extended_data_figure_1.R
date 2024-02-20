@@ -34,7 +34,7 @@ p1 = ggplot(all_data_thread_size , aes(x = thread_size,
   theme_classic() + theme(strip.background = element_blank(),
         text = element_text(size = 15)) +
   geom_point(size = 0.3, alpha = 0.6) + facet_wrap(.~ social, nrow = 2) +
-  scale_x_log10(labels=trans_format('log10',math_format(10^.x)), breaks = c(10^1,10^3,10^5)) + 
+  scale_x_log10(labels=trans_format('log10',math_format(10^.x))) + 
   scale_y_log10(labels=trans_format('log10',math_format(10^.x))) +
   labs(x = "Number of comments",
        y = "Number of posts", col = "Topic") +
@@ -64,8 +64,7 @@ p2 = ggplot(all_data_user_lifetime, aes(x = as.numeric(lifetime)/86400,
      theme_classic() + theme(strip.background = element_blank(),
         text = element_text(size = 15)) + 
      geom_point(size = 0.3, alpha = 0.6) + facet_wrap(.~ social, nrow = 2) +
-     scale_x_log10(labels=trans_format('log10',math_format(10^.x)),
-               breaks = c(10^1,10^3)) + 
+     scale_x_log10(labels=trans_format('log10',math_format(10^.x))) + 
   scale_y_log10(labels=trans_format('log10',math_format(10^.x))) +
   labs(x = "Lifetime",
        y = "Number of users", col = "Topic") +
@@ -95,7 +94,7 @@ p3 = ggplot(all_data_thread_lifetime, aes(x = as.numeric(lifetime)/86400,
   theme_classic() + theme(strip.background = element_blank(),
         text = element_text(size = 15)) +
   geom_point(size = 0.3, alpha = 0.6) + facet_wrap(.~ social, nrow = 2) +
-  scale_x_log10(labels=trans_format('log10',math_format(10^.x)), breaks = c(10^1,10^3)) + 
+  scale_x_log10(labels=trans_format('log10',math_format(10^.x))) + 
   scale_y_log10(labels=trans_format('log10',math_format(10^.x))) +
   labs(x = "Lifetime",
        y = "Number of posts", col = "Topic") +

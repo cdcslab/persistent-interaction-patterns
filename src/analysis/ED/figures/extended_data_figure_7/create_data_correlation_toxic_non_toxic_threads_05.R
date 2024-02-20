@@ -15,7 +15,7 @@ source("src/utils/participation_and_regression_functions.R")
 
 all_data = setDT(NULL)
 # social = c("gab","reddit","voat","telegram","twitter","usenet","youtube","facebook","facebook_news")
-social = c("voat", "usenet")
+social = c("voat")
 n_bin = 21
 
 for (i in social) {
@@ -138,14 +138,7 @@ data_for_plot_correlation$topic_and_social =
 if (identical(
   social,
   c(
-    "gab",
-    "reddit",
-    "voat",
-    "telegram",
-    "twitter",
-    "usenet",
-    "youtube",
-    "facebook"
+    "voat"
   )
 )) {
   # In this case save directly the file
