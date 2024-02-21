@@ -137,7 +137,7 @@ if (identical(
   message("Writing a new file!")
   write_parquet(
     data_for_plot_slopes,
-    "data/Results/extended_data_figure_7/data_for_plot_toxicity_slopes_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_toxicity_slopes_05.parquet"
   )
   
 } else {
@@ -148,7 +148,7 @@ if (identical(
   
   use = str_to_title(social)
   all_data_old = read_parquet(
-    "data/Results/extended_data_figure_7/data_for_plot_toxicity_slopes_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_toxicity_slopes_05.parquet"
   ) %>%
     filter(!(social %in% use))
   print(unique(all_data_old$social))
@@ -159,7 +159,7 @@ if (identical(
   print(unique(data_for_plot_slopes$social))
   write_parquet(
     data_for_plot_slopes,
-    "data/Results/extended_data_figure_7/data_for_plot_toxicity_slopes_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_toxicity_slopes_05.parquet"
   )
   
 }
@@ -193,7 +193,7 @@ if (!identical(
   message("Writing a new file!")
   write_parquet(
     data_for_plot_lollipop,
-    "data/Results/extended_data_figure_7/data_for_plot_correlations_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_correlations_05.parquet"
   )
   
 } else {
@@ -203,7 +203,7 @@ if (!identical(
   message("Updating: ", social)
   
   use = str_to_title(social)
-  all_data_old = read_parquet("data/Results/extended_data_figure_7/data_for_plot_correlations_05.parquet") %>%
+  all_data_old = read_parquet("data/Results/extended_data_figure_5/data_for_plot_correlations_05.parquet") %>%
     filter(!(social %in% use))
   print(unique(all_data_old$social))
   
@@ -213,7 +213,7 @@ if (!identical(
   print(unique(data_for_plot_lollipop$social))
   write_parquet(
     data_for_plot_lollipop,
-    "data/Results/extended_data_figure_7/data_for_plot_correlations_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_correlations_05.parquet"
   )
   
 }

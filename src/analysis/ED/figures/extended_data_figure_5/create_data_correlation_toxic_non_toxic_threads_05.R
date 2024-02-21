@@ -140,7 +140,7 @@ if (identical(
   message("Writing a new file!")
   write_parquet(
     data_for_plot_correlation,
-    "data/Results/extended_data_figure_7/data_for_plot_correlation_toxic_non_toxic_threads_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_correlation_toxic_non_toxic_threads_05.parquet"
   )
   
 } else {
@@ -151,7 +151,7 @@ if (identical(
   
   use = str_to_title(social)
   all_data_old = read_parquet(
-    "data/Results/extended_data_figure_7/data_for_plot_correlation_toxic_non_toxic_threads_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_correlation_toxic_non_toxic_threads_05.parquet"
   ) %>%
     filter(!(social %in% use))
   print(unique(all_data_old$social))
@@ -162,7 +162,7 @@ if (identical(
   print(unique(data_for_plot_correlation$social))
   write_parquet(
     data_for_plot_correlation,
-    "data/Results/extended_data_figure_7/data_for_plot_correlation_toxic_non_toxic_threads_05.parquet"
+    "data/Results/extended_data_figure_5/data_for_plot_correlation_toxic_non_toxic_threads_05.parquet"
   )
   
 }
