@@ -98,6 +98,8 @@ df_data <- load_data_frame(input_filename) %>%
   setDT()
 
 df_data$topic <- str_to_title(df_data$topic)
+df_data$topic <- ifelse(df_data$topic == "Greatawakening", "Conspiracy", df_data$topic)
+
 # Define toxic comments
 df_data[is.na(toxicity_score), "toxicity_score"] <- 0
 df_data$is_toxic = ifelse(df_data$toxicity_score > 0.6, T, F)

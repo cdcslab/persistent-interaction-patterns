@@ -58,7 +58,7 @@ all_data_user_lifetime$social = factor(all_data_user_lifetime$social,
                     levels = c("Usenet","Facebook","Gab","Reddit","Telegram","Twitter","Voat","Youtube"))
 all_data_user_lifetime[social == "Youtube", "social"] = "YouTube"
 
-p2 = ggplot(all_data_user_lifetime, aes(x = as.numeric(lifetime)/86400, 
+p2 = ggplot(all_data_user_lifetime, aes(x = as.numeric(lifetime), 
                      y = count,
                      col = topic, group = topic)) + 
      theme_classic() + theme(strip.background = element_blank(),
@@ -88,7 +88,7 @@ all_data_thread_lifetime[social == "Youtube", "social"] = "YouTube"
 all_data_thread_lifetime$social = factor(all_data_thread_lifetime$social, 
                     levels = c("Usenet","Facebook","Gab","Reddit","Telegram","Twitter","Voat","YouTube"))
 
-p3 = ggplot(all_data_thread_lifetime, aes(x = as.numeric(lifetime)/86400, 
+p3 = ggplot(all_data_thread_lifetime, aes(x = as.numeric(lifetime), 
                      y = count,
                      col = topic, group = topic)) + 
   theme_classic() + theme(strip.background = element_blank(),

@@ -13,7 +13,7 @@ source("src/utils/participation_and_regression_functions.R")
 
 all_data = setDT(NULL)
 # social = c("youtube","voat","usenet","twitter","telegram","reddit","gab","facebook","facebook_news")
-social = c("voat", "usenet")
+social = "voat"
 n_bin = 21
 
 for (i in social) {
@@ -129,18 +129,9 @@ data_for_plot_slopes$social = factor(
   )
 )
 
-if (!identical(
+if (identical(
   social,
-  c(
-    "gab",
-    "reddit",
-    "voat",
-    "telegram",
-    "twitter",
-    "usenet",
-    "youtube",
-    "facebook"
-  )
+    c("voat"),
 )) {
   # In this case save directly the file
   message("Writing a new file!")

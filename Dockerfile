@@ -47,6 +47,9 @@ RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_1/create_data_user
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_1/create_data_thread_size_distribution.R
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_1/create_data_thread_lifetime_distribution.R
 RUN Rscript /app/src/visualization/extended_data_figure_1/plot_extended_data_figure_1.R
+RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_2/create_data_toxicity_conversation_with_at_least_11_comments.R
+RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_2/create_data_toxicity_extremely_toxic_authors.R
+RUN Rscript /app/src/visualization/extended_data_figure_2/plot_extended_data_figure_2.R
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_2/create_data_toxicity_extremely_toxic_authors.R
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_2/create_data_toxicity_conversation_with_at_least_11_comments.R
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_3/create_data_toxicity_vs_bin.R
@@ -55,9 +58,9 @@ RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_4/create_data_toxi
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_4/create_data_toxicity_vs_lifetime_threads.R
 RUN Rscript /app/src/visualization/extended_data_figure_4/plot_extended_figure_4.R
 RUN Rscript /app/src/analysis/ED/tables/extended_data_table_3/create_ed_table_3.R
-RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_7/create_data_correlation_toxic_non_toxic_threads_05.R
-RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_7/create_data_toxicity_percentage_by_log_bin_threads_0.5.R
-RUN Rscript /app/src/visualization/extended_data_figure_7/plot_extended_data_figure_7.R
+RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_5/create_data_correlation_toxic_non_toxic_threads_05.R
+RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_5/create_data_toxicity_percentage_by_log_bin_threads_0.5.R
+RUN Rscript /app/src/visualization/extended_data_figure_5/plot_extended_data_figure_5.R
 
 ENV R_PROFILE_USER=/usr/local/lib/R/etc/Rprofile.site
 RUN echo 'setwd("/app")' >> $R_PROFILE_USER

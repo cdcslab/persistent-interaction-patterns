@@ -36,11 +36,6 @@ for (i in social) {
   print(nrow(df[is.na(date)]))
   df = df[!is.na(date)]
   
-  if (i == "gab") {
-    df$topic = "feed"
-    
-  }
-  
   # Set toxicity from NA to 0 and define toxic comments
   
   df[is.na(toxicity_score), "toxicity_score"] = 0
