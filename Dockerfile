@@ -29,11 +29,10 @@ COPY renv.lock renv.lock
 RUN mkdir renv/.cache
 
 # # Restore packages, if needed
-# RUN Rscript -e "install.packages('renv')"
-# RUN Rscript -e 'renv::restore()'
+RUN Rscript -e "install.packages('renv')"
+RUN Rscript -e 'renv::restore()'
 
 # Run scripts
-RUN Rscript -e 'install.packages(c("data.table", "dplyr", "arrow", "stringr", "scales", "ggplot2", "lubridate", "ggpubr", "xtable", "ndjson", "datetime", "patchwork", "logr", "readr", "log4r"))'
 RUN Rscript /app/src/analysis/main/figures/figure_1/create_data_distributions.R
 RUN Rscript /app/src/transformation/create_toxicity_percentage_by_binned_conversation_size_and_with_bin_ge_07.R
 RUN Rscript /app/src/analysis/main/figures/figure_1/create_data_participation_vs_bin.R
