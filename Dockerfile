@@ -1,7 +1,5 @@
 FROM rocker/rstudio:4.3
 
-ENV R_PROFILE_USER=/usr/local/lib/R/etc/Rprofile.site
-RUN echo 'setwd("/app")' >> $R_PROFILE_USER
 
 # Install libraries
 RUN apt-get update && apt-get install -y \
@@ -60,6 +58,9 @@ RUN Rscript /app/src/analysis/ED/tables/extended_data_table_3/create_ed_table_3.
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_7/create_data_correlation_toxic_non_toxic_threads_05.R
 RUN Rscript /app/src/analysis/ED/figures/extended_data_figure_7/create_data_toxicity_percentage_by_log_bin_threads_0.5.R
 RUN Rscript /app/src/visualization/extended_data_figure_7/plot_extended_data_figure_7.R
+
+ENV R_PROFILE_USER=/usr/local/lib/R/etc/Rprofile.site
+RUN echo 'setwd("/app")' >> $R_PROFILE_USER
 
 ENV USER="rstudio"
 CMD ["/usr/lib/rstudio-server/bin/rserver", "--server-daemonize", "0", "--auth-none", "1"]
