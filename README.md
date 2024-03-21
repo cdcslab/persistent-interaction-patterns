@@ -1,4 +1,4 @@
-The following repository contains the code for 'Toxicity in Online Conversations' paper.
+The following repository contains the code for 'Persistent interaction patterns across social media platforms and over time' paper.
 
 # How to run
 
