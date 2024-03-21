@@ -1,4 +1,4 @@
-The following repository contains the code for 'Persistent interaction patterns across social media platforms and over time' paper.
+The following repository contains the code for 'Persistent interaction patterns across social media platforms and over time' paper, published on [Nature](https://www.nature.com/articles/s41586-024-07229-y).
 
 # How to run
 
